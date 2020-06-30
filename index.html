@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pagina Trabajo final Crehana Typescript">
+    <meta name="keywords" content="Crehana, Typescript, Portafolio, Proyecto">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="INDEX,FOLLOW">
+
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
+
+    <title>Proyecto Final Crehan Curso de Typescript</title>
+</head>
+<body>
+                    <!-- Fotografia full -->
+                    <section class="fila" id="fotografia-full">
+                    
+                        <div class="contenedor1">
+                    
+                            <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 button-photo ">
+                                <i class="fas fa-times-circle " id="cerrarfoto"></i>
+                            </div>
+                    
+                            <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 ">
+                    
+                                <div class="fotografia"  id=foto-full>
+                    <img src="img/newyork.jpg" alt="Gautam-krishnan-">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+    
+
+
+    <header  id="home" ><!-- ENCABEZADO -->
+
+            <!-- new customer error -->
+            <section class="fila" id="new-customer-error">
+            
+                <div class="contenedor1"> 
+                        <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 button-error ">
+                        <i class="fas fa-times-circle" id="btnCerrarCustomerError"></i>
+                     </div>
+          
+                    <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 titulos-error">                      
+                        <div class="titulos error">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h2> Sorry </h2>
+                            <h2>-- Maintenance---</h2>
+                            <h2> Try another time  </h2>
+                        </div>
+                    </div>
+            </section>
+
+
+            <!-- Agent login -->
+        <section class="fila" id="agent-login">
+
+            <div class="contenedor1">
+
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 button-agent "> 
+                    <i class="fas fa-times-circle" id="btnCerrarAgent"></i>
+                </div>
+
+                <div  class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 ">
+
+
+                    <div class="aloggin titulos  btn-loggin">
+                    
+                        <h2> Agent Login </h2>
+                        <label for="idAgent"> Id name </label>
+                        <input type="text" name="idAgent" id="idAgent">
+                        <label for="password-agent">Password</label>
+                        <input type="password" name="password-agent" id="password-agent">
+                        
+                        <button id="init-session-agent">Login</button>
+
+                </div>
+            </div>
+        </section>
+
+
+            <!-- Customer Loggin -->
+        <section class="fila" id="customer-login">
+
+            <div class="contenedor1">
+
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 button-agent "> 
+                    <i class="fas fa-times-circle" id="btnCerrarCustomer"></i>
+                </div>
+
+                <div  class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 ">
+
+                    <div  class="aloggin titulos  btn-loggin" >
+
+                        <h2> Customer Login </h2>
+                        <label for="email-customer"> E-mail </label>
+                        <input type="email" name="email-customer" id="email-customer">
+                        <label for="password-customer">Password</label>
+                        <input type="password" name="password-customer" id="password-customer">
+                        <button  id="init-session-customer" >Login</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+                    <!-- registrer -->
+        <section class="fila" id="register">
+
+            <div class="contenedor1">
+
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 button-agent "> 
+                    <i class="fas fa-times-circle" id="btn-cerrar-menu-register"  ></i> 
+                </div>
+
+                <div  class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 ">
+
+                
+                    <div class="aloggin titulos  btn-loggin">
+                    
+                    
+                    
+                        <h2> Register </h2>
+                        <label for="new-id" class="label-register">Name</label>
+                        <input type="text" name="Id Name" id="new-id" class="input-register">
+                        <label for="new-email" class="label-register"> E-mail </label>
+                        <input type="email" name="Email" id="new-email" class="input-register">
+                        <label for="new-password" class="label-register">Password</label>
+                        <input type="password" name="Password" id="new-password" class="input-register">
+                        <button id="btn-login-register">Login</button>
+                    </div>
+
+              
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!--  Session -->
+        <section class="fila" id="sesion">
+
+            <div class="contenedor1">
+
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 button-iniciar-session "> 
+                    <i class="fas fa-times-circle" id="btn-cerrar-menu-session"  ></i> 
+                </div>
+
+                <div class="titulos  col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12">
+                    <h2> Login </h2>
+                </div>
+
+                <div  class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-tab-big-12 col-12 ">
+                    
+                    
+                    <button id="agent-btn-open"  >Agent</button>
+                    <button id="customer-btn-open">Customer</button>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+     
+                    <!-- Boton volver arriba  -->
+                    <section class="col-full-2" id="btn-subir" > 
+                        
+                            <a href="#home"><i class="fas fa-arrow-alt-circle-up"></i></a>
+
+                    </section>
+                
+  
+
+
+
+        <!-- Loggin  -->
+        <section class="fila" id="loggin"> 
+
+            <div class="contenedor1" >
+
+
+                <div class="col-full-8 col-8 col-tab-big-8">
+
+                    <div class="log" id="log1"> 
+                        <i class="fas fa-user" id="btn-agent-login"></i>
+                        <p>Agent Login</p>                                           
+                    </div>
+
+                    <div class="log" id="log2">                        
+                        <i class="fas fa-user" id="btn-customer-login" ></i>
+                        <p>Customer Login</p>
+                    </div>
+
+                    <div class="log" id="log3">
+                        <i class="far fa-sticky-note" id="newMember" ></i>
+                        <p>Not a Member? <span id="menu-register" > Register </span> </p>
+                    </div>
+
+
+          
+                </div>
+
+
+                <div class="col-full-4 col-4 col-tab-big-4 log social">
+
+                     <i class="fab fa-facebook-f"></i>
+                     <i class="fab fa-twitter"></i>
+                     <i class="fab fa-instagram"></i>
+                     <i class="fab fa-linkedin-in"></i>
+
+                </div>
+
+            </div>
+
+        </section><!-- FIN Logging -->
+
+
+        <!-- Logo y Barra de Navegacion celular - tablet-->
+        <section class="fila" id="nav-phone">
+        
+            <div class="contenedor1">
+        
+                <div class="col-smarth-12 log-cel">
+        
+                    <div class="btn-phone" > <i class="fas fa-bars"  id="btn-burger"  ></i>  </div>
+
+
+                   <div  class=" titulo-cel" > <h2>VOYAGE</h2> </div>
+                    
+                    
+        
+                </div>
+        
+
+                <nav class="col-smarth-3 col-tab-small-3 col-tablet-3  col-tab-big-3 btn-nav  " id="menu-nav-phone">
+        
+                    <a href="#home" class="elementosNav">Home</a>
+                    <a href="#destination" class="elementosNav">Destination</a>
+                    <a href="#clients" class="elementosNav">Clients</a>
+                    <a href="#offers" class="elementosNav">Especial</a>
+                    <a href="#holidays" class="elementosNav">Holidays</a>
+                    <a href="#" class="elementosNav">Blog</a>
+                    <a href="#" class="elementosNav" id="btn-menu-sesion" >Session</a>
+        
+                </nav>
+        
+            </div>
+        
+        </section><!-- FIN Logo y Barra de Navegacion celular - tablet -->
+
+
+
+
+
+        <!-- Logo y Barra de Navegacion pc full-->
+        <section class="fila" id="nav-pcfull" >
+
+            <div class="contenedor1"> 
+                
+                <div class="col-full-4 col-4 col-tab-big-4 ">
+
+                   <h2>VOYAGE</h2>
+
+                </div>
+
+                <nav class="col-full-8 col-8 col-tab-big-8">
+
+                    <a href="#home">Home</a>
+                    <a href="#destination">Destination</a>
+                    <a href="#clients">Clients</a>
+                    <a href="#offers">Especial</a>
+                    <a href="#holidays">Holidays</a>
+                    <a href="#">Blog</a>
+                    <i class="fas fa-search"></i>
+
+                </nav>
+
+            </div>
+
+        </section><!-- FIN Logo y Barra de Navegacion pc full -->
+
+
+
+
+
+        <!-- Logo y Barra de Navegacion movil-->
+        <section class="fila" id="nav-movil">
+        
+            <div class="contenedor1">
+        
+                <div class="col-full-4 col-4 col-tab-big-4">
+        
+                      <h2>VOYAGE</h2>
+        
+                </div>
+        
+                <nav class="col-full-8 col-8 col-tab-big-8">
+        
+                    <a href="#home">Home</a>
+                    <a href="#destination">Destination</a>
+                    <a href="#clients">Clients</a>
+                    <a href="#offers">Especial</a>
+                    <a href="#holidays">Holidays</a>
+                    <a href="#">Blog</a>
+                    <a href="" id="sesion">Session</a>
+                    <i class="fas fa-search"></i>
+        
+                </nav>
+        
+            </div>
+        
+        </section><!-- FIN Logo y Barra de Navegacion movil -->
+
+
+        <!-- Banner -->
+        <section class="fila" id="banner" >
+
+            <div class="contenedor1"> 
+                
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-12 col-tab-big-12 ">
+
+
+
+
+                    <div class="header col-full-8 col-8  col-smarth-12 col-tab-small-12 col-tab-big-12 ">
+
+                        <div  id="login-user" >
+                            <h2> TO TRAVEL IS TO LIVE </h2>
+                            <p>You Don't Need Magin to Disapear. All you need is destination</p>
+                        </div>
+
+                        <div class="botones" >
+
+                            <button> Show on the map </button>
+                            <button>More Info</button>
+
+                        </div>
+
+                         <div class="titulo-footer-banner" id="destination" > 
+
+
+                            <h3>Find your  Holidays</h3>
+
+                        </div>
+
+                        <div class="bnts-footer-banner">
+
+                        <label for="">Where</label>
+                        <input type="text" name="Destination" id="" placeholder="Destination">
+
+                        <label for="">When</label>
+                        <input type="date" name="Date" id="" placeholder="Select Date">
+
+                        <input type="button" value="Search">
+
+                    </div>
+
+
+
+
+                </div>
+
+
+                </div>
+                    
+
+
+            
+            </div>
+
+        </section><!-- FIN Banner -->
+
+
+
+    </header>
+
+
+
+
+    <main>
+
+        <!-- Especial Offers -->
+        <section class="fila" id="offers" >
+
+            <div class="contenedor1">
+                
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-12 titulos col-tab-big-12 col-smarth-12">
+
+                    <h2>Especial Offers</h2>
+                    <p> The best 2020 packages where people love to stay! </p>
+
+
+                </div>
+
+                        <section class="box-slider col-full-12 col-12 col-tablet-12 col-tab-small-12 col-smarth-12">
+                        
+                            <div class="slider col-full-12 col-12 col-tab-big-12 col-tablet-12 col-tab-small-12 col-smarth-12"
+                                id="slider">
+                        
+                        
+                                <div class="slide col-full-3 col-3 col-tab-big-5 col-tablet-9 col-tab-small-9 col-smarth-9" >
+                        
+                                    <div class="imagen">
+                                        <img src="img/hongkong.jpg" alt="Chris-slupski">
+                                    </div>
+                        
+                                    <div class="text-img">
+                        
+                                        <h4>Hong kong</h4>
+                                        <p>Chris-slupski</p>
+                                        <i class="fas fa-sort-down"></i>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                                <div class=" slide col-full-3 col-3 col-tab-big-5 col-tablet-9 col-tab-small-9 col-smarth-9">
+                        
+                                    <div class="imagen">
+                                        <img src="img/tokio.jpg" alt="Alexander-schimmeck-">
+                                    </div>
+                        
+                                    <div class="text-img">
+                        
+                                        <h4>Tokio</h4>
+                                        <p>Alexander-schimmeck</p>
+                                        <i class="fas fa-sort-down"></i>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                        
+                        
+                        
+                                <div class="slide col-full-3 col-3 col-tab-big-5 col-tablet-9 col-tab-small-9 col-smarth-9">
+                        
+                                    <div class="imagen">
+                                        <img src="img/newyork.jpg" alt="Gautam-krishnan-">
+                                    </div>
+                                    <div class="text-img">
+                        
+                                        <h4>New York</h4>
+                                        <p>Gautam-krishnan</p>
+                                        <i class="fas fa-sort-down"></i>
+                        
+                                    </div>
+                        
+                                </div>
+                        
+                        
+                        
+                        
+                                <div class="slide col-full-3 col-3 col-tab-big-5 col-tablet-9 col-tab-small-9 col-smarth-9">
+                        
+                                    <div class="imagen">
+                                        <img src="img/canyon.jpg" alt="Diego-lozano-">
+                                    </div>
+                        
+                                    <div class="text-img">
+                        
+                                        <h4>Canyo</h4>
+                                        <p>Diego-lozano</p>
+                                        <i class="fas fa-sort-down"></i>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                                <div class="slide col-full-3 col-3 col-tab-big-5 col-tablet-9 col-tab-small-9 col-smarth-9">
+                        
+                                    <div class="imagen">
+                                        <img src="img/night.jpg" alt="Janer-zhang-">
+                                    </div>
+                        
+                                    <div class="text-img">
+                        
+                                        <h4>Night</h4>
+                                        <p>Janer-zhang</p>
+                                        <i class="fas fa-sort-down"></i>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                        
+                                <div class="slide col-full-3 col-3 col-tab-big-5 col-tablet-9 col-tab-small-9 col-smarth-9">
+                        
+                                    <div class="imagen">
+                                        <img src="img/shuja.jpg" alt="Shuja-official">
+                                    </div>
+                        
+                                    <div class="text-img">
+                        
+                                        <h4>Shuja</h4>
+                                        <p>Shuja-official</p>
+                                        <i class="fas fa-sort-down"></i>
+                        
+                                    </div>
+                        
+                                </div>
+                        
+                        
+                        
+                            </div>
+                        
+                        
+                        </section>
+
+
+            </div>   
+
+
+
+        </section>
+
+
+
+
+            
+            <!-- FIN  Especial Offers -->
+
+
+
+        <!-- Holidays -->
+        <section class="fila" id="holidays">
+
+            <div class="contenedor1">
+
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-12  col-tab-big-12 titulos">
+
+                    <h2>Holisday Type</h2>
+                    <p>Get Explore Your Dream To Travel To World</p>
+
+                </div>
+
+                <div class="col-full-12 col-smarth-12  col-tab-small-12 col-tablet-12 col-12 col-tab-big-12">
+
+                    <div class="col-full-2 col-smarth-6 col-tab-small-4 col-tablet-4 col-2 col-tab-big-2 holi">
+
+                           <div class="simbol">
+                                <i class="fas fa-ship"></i>
+                           </div>
+
+                           <div class="text">
+                                <p>Cruise</p>
+                           </div>                                       
+                    </div>
+                    
+
+
+                    <div class="col-full-2 col-smarth-6 col-tab-small-4 col-tablet-4 col-2 col-tab-big-2 holi">
+
+                        <div class="simbol">
+                            <i class="fas fa-city"></i>
+                        </div>
+
+                        <div class="text" >
+                             <p>City Bracks</p>
+                        </div>                           
+                    </div>
+
+
+                    <div class="col-full-2 col-smarth-6 col-tab-small-4  col-tablet-4 col-2  col-tab-big-2 holi">
+                        <div class="simbol">
+                            <i class="fas fa-heart"></i>
+                        </div>
+
+                        <div class="text">
+                            <p>HoneyMoon</p>
+                        </div>                                             
+                    </div>
+
+
+                    <div class="col-full-2 col-smarth-6 col-tab-small-4 col-tablet-4 col-2 col-tab-big-2 holi">
+                        <div class="simbol">
+                            <i class="fab fa-safari"></i>
+                        </div>
+
+                        <div class="text">
+                            <p>HoneyMoon</p>
+                        </div>                                              
+                    </div>
+
+
+                    <div class="col-full-2 col-smarth-6 col-tab-small-4 col-tablet-4 col-2 col-tab-big-2 holi">
+                        <div class="simbol">
+                             <i class="fas fa-paw"></i>
+                        </div>
+
+                        <div class="text">
+                            <p>Safari</p>
+                        </div>         
+                    </div>
+
+
+                    <div class="col-full-2 col-smarth-6 col-tab-small-4 col-tablet-4 col-2 col-tab-big-2 holi">
+                        <div class="simbol">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+
+                        <div class="text">
+                           <p>Beach</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- FIN  Holydays -->
+
+
+
+        <!-- Clients -->
+        <section class="fila" id="clients">
+
+            <div class="contenedor1" >
+
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-12 col-tab-big-12 titulos">
+                    <h2>HAPPY CLIENTS</h2>
+                    <p>What customer say about us and why love our services</p>
+                </div>
+
+                 <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-12 col-tab-big-12 tabs-selection "
+                     id="tabs-selection">
+                    <a class="activo"  href="">CLIENT 1</a>
+                    <a href="">CLIENT 2</a>
+                    <a href="">CLIENT 3</a>
+                    <a href="">CLIENT 4</a>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="contenedor1 "></div>
+
+                <article class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-12 col-tab-big-12 seleccionado">
+
+
+                    <div class="col-full-8 col-smarth-11 col-tab-small-11 col-tablet-11 col-11 col-tab-big-11 texto-seleccionado  activo">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                           Perspiciatis ipsum explicabo dolore id corporis neque nulla, 
+                           consequuntur fuga itaque praesentium suscipit est ipsa natus laborum. 
+                           Voluptatibus minima labore animi quis.
+                        </p>
+                        <h3>Slan 48</h3>
+                        <p>Peru</p>
+                    </div>
+
+
+
+
+                    <div class="col-full-8 col-smarth-11 col-tab-small-11 col-tablet-11 col-11 col-tab-big-11 texto-seleccionado">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                           Perspiciatis ipsum explicabo dolore id corporis neque nulla, 
+                           consequuntur fuga itaque praesentium suscipit est ipsa natus laborum. 
+                           Voluptatibus minima labore animi quis.
+                        </p>
+                        <h3>Cliente 2</h3>
+                        <p>Japan</p>
+                    </div>
+
+
+                    <div class="col-full-8 col-smarth-11 col-tab-small-11 col-tablet-11 col-11 col-tab-big-11 texto-seleccionado">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perspiciatis ipsum explicabo dolore id corporis neque nulla,
+                            consequuntur fuga itaque praesentium suscipit est ipsa natus laborum.
+                            Voluptatibus minima labore animi quis.
+                        </p>
+                        <h3>Cliente 3</h3>
+                        <p>Mexico</p>
+                    </div>
+
+
+                    <div class="col-full-8 col-smarth-11 col-tab-small-11 col-tablet-11 col-11 col-tab-big-11 texto-seleccionado">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perspiciatis ipsum explicabo dolore id corporis neque nulla,
+                            consequuntur fuga itaque praesentium suscipit est ipsa natus laborum.
+                            Voluptatibus minima labore animi quis.
+                        </p>
+                        <h3>Cliente 4</h3>
+                        <p>United State</p>
+                    </div>
+
+
+                </article>
+
+            </div>
+
+        </section><!-- FIN  Holydays -->
+
+    </main>
+
+    <footer>
+
+        <section class="fila" >
+
+            <!--  Last News -->
+            <div class="contenedor2"> 
+                
+                <div class="col-full-3 col-smarth-12 col-tab-small-12 col-tablet-12 col-6 col-tab-big-12 newsletter">
+
+                    <div class="text-newsletter" > 
+
+                        <h3>Newsletter</h3>
+
+                    </div>
+
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aliquid</p>
+                    <p>Necessitatibus vero quos eum provident minima.</p>
+
+                    <input type="text" name="subscribe" id="subsribe" placeholder="Subscribe">
+                    <button>Go</button>
+
+                </div>
+
+                <div class="col-full-3 col-smarth-12 col-tab-small-12 col-tablet-12 col-6 col-tab-big-12 ">
+
+                    <div> <h3>Lates News</h3> <br> </div>
+
+                    
+
+                    <div class="news">
+
+                        <div class="img-news" > <img src="./img/hotelnight.jpg" alt=""> </div>
+                        <div class="text-news">  
+                            <p>Post gallery Multiple Images</p> 
+                            <p> January 17, 2020 - 5 55 pm   </p>                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="news">
+
+                        <div class="img-news"> <img src="./img/snow.jpg"
+                                alt="a href='https://www.freepik.es/fotos/invierno'>Foto de Invierno creado por wirestock - www.freepik.es">
+                        </div>
+                        <div class="text-news" >  <p>Snowboarding is Fun!</p> 
+                                <p> December 21, 2019 - 2 20 pm   </p>                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-full-3 col-smarth-12 col-tab-small-12 col-tablet-12 col-6 col-tab-big-12  tags">
+
+                    <div> <h3>Tags</h3> </div>
+
+                    <div>
+
+                        <button>Agent Login</button>
+                        <button>Customer Login</button>
+                        <button>Not a Member?</button>
+                        <button>Contac</button>
+                        <button>New horizon</button>
+                        <button>Landscape</button>
+                        <button>Tags</button>
+                        <button>Nice</button>
+                        <button>Some</button>
+                        <button>Portrait</button>
+
+                    </div>
+
+                    
+
+                </div>
+
+
+                <div class="col-full-3 col-smarth-12 col-tab-small-12 col-tablet-12 col-6  col-tab-big-12 addres">
+
+                    <div class="text-addres"> <h3>Address</h3> </div>
+
+                    <div > 
+                    
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas </p>
+                        <p> Excepturi iste amet voluptatem aperiam! </p>
+                        <p> <span>Email:</span> Lorem_ipsum@textgenerator.com </p>
+                        <p>Call us Now: 888 999 1234 </p>
+                    
+                    </div>
+
+
+                                                    
+                                          
+
+                    <div class="social-footer">
+
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin-in"></i>
+
+
+                    </div>
+
+                    
+
+                </div>
+            
+            </div> <!--  FIN  Last News -->
+
+
+            <!-- Nav footer -->
+            <div class="contenedor2 nav-footer" >
+
+                <nav class="col-full-12  col-smarth-12 col-tab-small-12 col-tablet-12 col-12 " >
+
+                    <a href="home#">Home</a>
+                    <a href="#destination">Destination</a>
+                    <a href="#clients">Clients</a>
+                    <a href="#offers">Especial</a>
+                    <a href="#holidays">Holidays</a>
+                    <a href="#">Blog</a>
+
+                </nav>
+                <div class="col-full-12 col-smarth-12 col-tab-small-12 col-tablet-12 col-12">
+                <p>&copy;2020 @VOYAGE All Right Reserved</p>
+
+                </div>
+
+            </div><!-- FIN Nav footer -->
+
+
+        </section>
+
+
+    </footer>
+    
+    <script src=js/attachment.js></script>
+    <script src=js/lightbox.js> </script>
+    <script src="js/tabs.js"></script>
+
+
+    <script src="node_modules/systemjs/dist/system.js"></script> 
+    
+
+    <script>
+
+        SystemJS.config({
+            baseURL: '/',
+            defaultJSExtensions:true
+        });
+
+        SystemJS.import('js/index.js');
+
+    </script>  
+
+
+
+
+
+</body>
+</html>

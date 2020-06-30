@@ -1,0 +1,3179 @@
+@charset "UTF-8";
+/*Resett */
+* {
+  margin: 0;
+  padding: 0;
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+main {
+  overflow: hidden;
+}
+img {
+  width: 90%;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+/*Colores*/
+/* rgb(44,62,80) */
+/* rgb(26,210,175) */
+/* rgb(29,210,175) */
+/* rgb(136, 153, 168) */
+/* rgb(245,246,247) */
+/*tipografia*/
+@font-face {
+  font-family: 'raleway-black-webfont';
+  src: url('/webfonts/raleway-black-webfont.eot');
+  src: url('/webfonts/raleway-black-webfont.eot?#iefix') format('embedded-opentype'), url('/webfonts/raleway-black-webfont.woff2') format('woff2'), url('/webfonts/raleway-black-webfont.woff') format('woff'), url('/webfonts/raleway-black-webfont.ttf') format('truetype'), url('/webfonts/raleway-black-webfont.svg#20_dbregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway-bold-webfont';
+  src: url('/webfonts/raleway-bold-webfont.eot');
+  src: url('/webfonts/raleway-bold-webfont.eot?#iefix') format('embedded-opentype'), url('/webfonts/raleway-bold-webfont.woff2') format('woff2'), url('/webfonts/raleway-bold-webfont.woff') format('woff'), url('/webfonts/raleway-bold-webfont.ttf') format('truetype'), url('/webfonts/raleway-bold-webfont.svg#20_dbregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway-light-webfont';
+  src: url('/webfonts/raleway-light-webfont.eot');
+  src: url('/webfonts/raleway-light-webfont.eot?#iefix') format('embedded-opentype'), url('/webfonts/raleway-light-webfont.woff2') format('woff2'), url('/webfonts/raleway-light-webfont.woff') format('woff'), url('/webfonts/raleway-light-webfont.ttf') format('truetype'), url('/webfonts/raleway-light-webfont.svg#20_dbregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway-medium-webfont';
+  src: url('/webfonts/raleway-medium-webfont.eot');
+  src: url('/webfonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'), url('/webfonts/raleway-medium-webfont.woff2') format('woff2'), url('/webfonts/raleway-medium-webfont.woff') format('woff'), url('/webfonts/raleway-medium-webfont.ttf') format('truetype'), url('/webfonts/raleway-medium-webfont.svg#20_dbregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway-regular-webfont';
+  src: url('/webfonts/raleway-regular-webfont.eot');
+  src: url('/webfonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/webfonts/raleway-regular-webfont.woff2') format('woff2'), url('/webfonts/raleway-regular-webfont.woff') format('woff'), url('/webfonts/raleway-regular-webfont.ttf') format('truetype'), url('/webfonts/raleway-regular-webfont.svg#20_dbregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*Generales*/
+.titulos h2 {
+  font-family: 'raleway-bold-webfont';
+  font-size: 2em;
+  text-transform: uppercase;
+}
+/*   */
+#btn-subir {
+  position: fixed;
+  z-index: 9999;
+  margin-right: 1px;
+  bottom: 20px;
+  right: 20px;
+  margin-right: -80px;
+  border-radius: 5px;
+  transition: all 2s ease  ;
+  background-color: rgba(44, 62, 80, 0.7);
+}
+#btn-subir i {
+  cursor: pointer;
+  font-size: 3em;
+  color: #1dd2af;
+}
+#fotografia-full {
+  position: fixed;
+  height: 100vh;
+  z-index: 99999;
+  background-color: rgba(44, 62, 80, 0.7);
+  display: none;
+  transition: all 2s ease;
+}
+#fotografia-full .button-photo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+#fotografia-full .button-photo i {
+  color: #f5f6f7;
+  font-size: 3em;
+  margin: 5% 5%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#fotografia-full .button-photo i:hover {
+  color: #1dd2af;
+}
+#fotografia-full .fotografia {
+  display: flex;
+  width: 80%;
+  margin: 5% auto;
+  background-color: #2c3e50;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#fotografia-full .fotografia img {
+  width: 80%;
+  margin: auto;
+}
+/*****************Header*****************/
+header {
+  width: 100%;
+  background-image: url(/img/header2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+/*Sesiones*/
+#new-customer-error {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  background-color: rgba(44, 62, 80, 0.99);
+  height: 100vh;
+  display: none;
+}
+#new-customer-error .titulos-error {
+  display: flex;
+  text-align: center;
+}
+#new-customer-error .titulos-error h2 {
+  margin-top: 5%;
+  font-size: 3em;
+  color: #f5f6f7;
+}
+#new-customer-error .titulos-error i {
+  color: #ffcc00;
+  font-size: 3em;
+  margin: 5% 10%;
+}
+#new-customer-error .button-error {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+#new-customer-error .button-error i {
+  color: #f5f6f7;
+  font-size: 3em;
+  margin: 5% 10%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#new-customer-error .button-error i:hover {
+  color: #1dd2af;
+}
+#sesion {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  background-color: rgba(44, 62, 80, 0.99);
+  height: 100vh;
+  display: none;
+}
+#sesion h2 {
+  margin-top: 5%;
+  font-size: 3em;
+  color: #f5f6f7;
+}
+#sesion button {
+  font-family: 'raleway-regular-webfont';
+  font-size: 1.2em;
+  background-color: #2c3e50;
+  color: #f5f6f7;
+  border: 2px solid #f5f6f7;
+  padding: 2%;
+  height: 80px;
+  margin: 5% auto;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+#sesion button:hover {
+  color: #1dd2af;
+  border: 2px solid #1dd2af;
+}
+#sesion .button-iniciar-session {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+#sesion .button-iniciar-session i {
+  color: #f5f6f7;
+  font-size: 3em;
+  margin: 5%  10%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#sesion .button-iniciar-session i:hover {
+  color: #1dd2af;
+}
+.btn-loggin h2 {
+  color: #f5f6f7;
+  margin: 3% auto;
+}
+.btn-loggin label {
+  font-family: 'raleway-regular-webfont';
+  font-size: 1.2em;
+  color: #f5f6f7;
+  margin-top: 2%;
+}
+.btn-loggin input {
+  width: 60%;
+  height: 30px;
+  font-family: 'raleway-regular-webfont';
+  font-size: 1.2em;
+  color: #2c3e50;
+  text-align: center;
+}
+.btn-loggin button {
+  font-family: 'raleway-regular-webfont';
+  font-size: 1.2em;
+  background-color: transparent;
+  color: #f5f6f7;
+  border: 2px solid #f5f6f7;
+  padding: 2%;
+  margin: 3% auto;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.btn-loggin button:hover {
+  color: #1dd2af;
+  border: 2px solid #1dd2af;
+}
+.button-agent {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.button-agent i {
+  color: #f5f6f7;
+  font-size: 3em;
+  margin: 5%  10%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.button-agent i:hover {
+  color: #1dd2af;
+}
+.aloggin {
+  display: flex;
+  width: 50%;
+  margin: 10% auto;
+  background-color: #2c3e50;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#agent-login {
+  position: fixed;
+  height: 100vh;
+  z-index: 99999;
+  background-color: rgba(44, 62, 80, 0.7);
+  display: none;
+}
+#agent-login .button-agent {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+#agent-login .button-agent i {
+  color: #f5f6f7;
+  font-size: 3em;
+  margin: 5%  10%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#agent-login .button-agent i:hover {
+  color: #1dd2af;
+}
+#agent-login .aloggin {
+  display: flex;
+  width: 50%;
+  margin: 10% auto;
+  background-color: #2c3e50;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#customer-login {
+  position: fixed;
+  height: 100vh;
+  z-index: 99999;
+  background-color: rgba(44, 62, 80, 0.7);
+  display: none;
+}
+#customer-login .button-agent {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+#customer-login .button-agent i {
+  color: #f5f6f7;
+  font-size: 3em;
+  margin: 5%  10%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#customer-login .button-agent i:hover {
+  color: #1dd2af;
+}
+#customer-login .aloggin {
+  display: flex;
+  width: 50%;
+  margin: 10% auto;
+  background-color: #2c3e50;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#register {
+  position: fixed;
+  height: 100vh;
+  z-index: 99999;
+  background-color: rgba(44, 62, 80, 0.7);
+  display: none;
+}
+#register .button-agent {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+#register .button-agent i {
+  color: #f5f6f7;
+  font-size: 3em;
+  margin: 1%  10%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#register .button-agent i:hover {
+  color: #1dd2af;
+}
+#register .aloggin {
+  display: flex;
+  width: 50%;
+  margin: 2% auto;
+  background-color: #2c3e50;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/*LOGGIN*/
+#loggin {
+  width: 100%;
+  display: flex;
+  background-color: #2c3e50;
+}
+#loggin .contenedor1 .log {
+  display: flex;
+  width: 30%;
+}
+#loggin .contenedor1 .log i {
+  color: #f5f6f7;
+  font-size: 0.75em;
+  margin: 3px;
+  transition: all 1s ease;
+}
+#loggin .contenedor1 .log i:hover {
+  color: #1dd2af;
+}
+#loggin .contenedor1 .log p {
+  color: #f5f6f7;
+  margin: 3px;
+  font-family: 'raleway-light-webfont';
+  font-size: 0.75em;
+}
+#loggin .contenedor1 .log p span {
+  color: #1dd2af;
+  cursor: pointer;
+}
+#loggin .contenedor1 .log #agent,
+#loggin .contenedor1 .log #customer,
+#loggin .contenedor1 .log #newMember {
+  cursor: pointer;
+}
+#loggin .contenedor1 .social {
+  cursor: pointer;
+}
+#loggin .contenedor1 .social i {
+  margin: auto 2%;
+  transition: all 1s ease;
+}
+#loggin .contenedor1 .social i:hover {
+  color: #1dd2af;
+}
+/*BARRA MENU PHONE*/
+#nav-phone {
+  display: none;
+}
+/*BARRA MENU PC*/
+#nav-pcfull {
+  background-color: #f5f6f7;
+}
+#nav-pcfull .contenedor1 {
+  flex-direction: row;
+}
+#nav-pcfull .contenedor1 h2 {
+  font-family: 'raleway-bold-webfont';
+  font-size: 2em;
+  margin: 2%;
+  color: #2c3e50;
+}
+#nav-pcfull .contenedor1 nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#nav-pcfull .contenedor1 nav a {
+  font-family: 'raleway-bold-webfont';
+  font-size: 1em;
+  color: #2c3e50;
+  margin: 1%;
+  transition: all 0.6s ease;
+}
+#nav-pcfull .contenedor1 nav a:hover {
+  color: #1dd2af;
+}
+#nav-pcfull .contenedor1 nav i {
+  font-size: 1em;
+  color: #2c3e50;
+  margin: 1%;
+  transition: all 0.6s ease;
+}
+#nav-pcfull .contenedor1 nav i:hover {
+  color: #1dd2af;
+}
+/*BARRA MENU MOVIL*/
+#nav-movil {
+  position: fixed;
+  z-index: 99;
+  display: none;
+  top: 0;
+  transition: all 2s ease;
+}
+#nav-movil .contenedor1 {
+  flex-direction: row;
+  background-color: #2c3e50;
+}
+#nav-movil .contenedor1 h2 {
+  font-family: 'raleway-bold-webfont';
+  font-size: 2em;
+  margin: 2%;
+  color: #f5f6f7;
+}
+#nav-movil .contenedor1 nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#nav-movil .contenedor1 nav a {
+  font-family: 'raleway-bold-webfont';
+  font-size: 1em;
+  color: #f5f6f7;
+  margin: 1%;
+  transition: all 0.6s ease;
+}
+#nav-movil .contenedor1 nav a:hover {
+  color: #1dd2af;
+}
+#nav-movil .contenedor1 nav i {
+  font-size: 1em;
+  color: #f5f6f7;
+  margin: 1%;
+  transition: all 0.6s ease;
+}
+#nav-movil .contenedor1 nav i:hover {
+  color: #1dd2af;
+}
+/*BANNER*/
+#banner {
+  margin-top: 10%;
+}
+#banner .btn-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#banner .btn-left i {
+  color: #1dd2af;
+  font-size: 2em;
+  margin-right: 30%;
+  margin-top: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#banner .btn-left i:hover {
+  color: #f5f6f7;
+}
+#banner .btn-right {
+  display: flex;
+  align-items: center;
+}
+#banner .btn-right i {
+  color: #1dd2af;
+  font-size: 2em;
+  margin-left: 30%;
+  margin-top: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#banner .btn-right i:hover {
+  color: #f5f6f7;
+}
+#banner .header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+}
+#banner .header h2 {
+  color: #f5f6f7;
+  font-family: 'raleway-black-webfont';
+  font-size: 4em;
+  margin-top: 10%;
+}
+#banner .header p {
+  color: #f5f6f7;
+  font-family: 'raleway-bold-webfont';
+  margin-bottom: 10%;
+}
+#banner .header .botones {
+  display: block;
+}
+#banner .header button {
+  border: solid 2px #f5f6f7;
+  background-color: none;
+  padding: 3%;
+  margin-top: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+  border-radius: 5px;
+  font-family: 'raleway-bold-webfont';
+  font-size: 1em;
+  color: #f5f6f7;
+  transition: all 0.6s ease;
+}
+#banner .header button:hover {
+  background-color: #1dd2af;
+  border: solid 2px #1dd2af;
+}
+#banner .header .titulo-footer-banner {
+  display: flex;
+  width: 100%;
+  margin-top: 15%;
+  align-items: center;
+  text-align: center;
+}
+#banner .header .titulo-footer-banner h3 {
+  color: #f5f6f7;
+  font-family: 'raleway-bold-webfont';
+  font-size: 1.5em;
+  margin: 5% auto;
+}
+#banner .header .bnts-footer-banner {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#banner .header .bnts-footer-banner input[type="text"],
+#banner .header .bnts-footer-banner input[type="date"] {
+  display: block;
+  margin: 1% 3%;
+  height: 30px;
+  background-color: transparent;
+  color: #f5f6f7;
+  font-family: 'raleway-medium-webfont';
+  border: solid 2px #8899a8;
+  border-radius: 5px;
+}
+#banner .header .bnts-footer-banner input[type="button"] {
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: solid solid #2c3e50;
+  transition: all  3 ease;
+  color: #f5f6f7;
+  font-family: 'raleway-bold-webfont';
+  cursor: pointer;
+}
+#banner .header .bnts-footer-banner input[type="button"]:hover {
+  background-color: #1dd2af;
+}
+#banner .header .bnts-footer-banner label {
+  font-family: 'raleway-bold-webfont';
+  color: #1dd2af;
+}
+/*OFFERS SLIDER*/
+#offers {
+  margin-top: 20px;
+}
+#offers .titulos {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+}
+#offers .titulos h2 {
+  margin-top: 10%;
+  margin-bottom: 1%;
+  color: #2c3e50;
+}
+#offers .titulos p {
+  font-family: 'raleway-light-webfont';
+  color: #2c3e50;
+  margin-bottom: 3%;
+}
+.box-slider {
+  width: 100%;
+  margin: 5% auto;
+}
+.slider {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 3s ease;
+}
+.slider .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  box-shadow: 2px 2px 1px 2px #888888;
+  cursor: pointer;
+}
+.slider .slide:hover {
+  box-shadow: 6px 6px 4px 6px #888888;
+}
+.slider .slide .imagen {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  background-color: #2c3e50;
+  padding: 0;
+}
+.slider .slide .imagen img {
+  width: 100%;
+  margin: 0 auto;
+}
+.slider .slide .text-img {
+  background-color: #2c3e50;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5%;
+  text-align: center;
+}
+.slider .slide .text-img h4 {
+  font-family: 'raleway-light-webfont';
+  font-size: 1.5em;
+  color: #f5f6f7;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+.slider .slide .text-img p {
+  font-size: 1em;
+  font-family: 'raleway-regular-webfont';
+  color: #8899a8;
+}
+.slider .slide .text-img i {
+  font-size: 2em;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  color: #f5f6f7;
+  cursor: pointer;
+  transition: all 3s ease;
+}
+.slider .slide .text-img i:hover {
+  color: #1dd2af;
+}
+.slider .imagen {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  background-color: #2c3e50;
+  padding: 0;
+}
+.slider .imagen img {
+  width: 100%;
+  margin: 0 auto;
+}
+.slider .text-img {
+  background-color: #2c3e50;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5%;
+  text-align: center;
+}
+.slider .text-img h4 {
+  font-family: 'raleway-light-webfont';
+  font-size: 1.5em;
+  color: #f5f6f7;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+.slider .text-img p {
+  font-size: 1em;
+  font-family: 'raleway-regular-webfont';
+  color: #8899a8;
+}
+.slider .text-img i {
+  font-size: 2em;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  color: #f5f6f7;
+  cursor: pointer;
+  transition: all  3s ease;
+}
+.slider .text-img i:hover {
+  color: #1dd2af;
+}
+/*HOLYDAYS*/
+#holidays {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  background-image: url(/img/hotel.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#holidays .contenedor1 {
+  background-color: rgba(44, 62, 80, 0.8);
+}
+#holidays .titulos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#holidays .titulos h2 {
+  color: #f5f6f7;
+  margin-top: 10%;
+}
+#holidays .titulos p {
+  font-family: 'raleway-regular-webfont';
+  color: #8899a8;
+  font-size: 1em;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+#holidays .holi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#holidays .holi .simbol {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: solid 2px #f5f6f7;
+  width: 50%;
+  height: 100px;
+  margin: auto;
+  transition: all 2s ease;
+}
+#holidays .holi .simbol:hover {
+  color: #1dd2af;
+  border: solid 2px #1dd2af;
+}
+#holidays .holi .text {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 3%;
+}
+#holidays .holi i {
+  font-size: 3em;
+  color: #f5f6f7;
+  margin: auto;
+  transition: all 2s ease;
+}
+#holidays .holi i:hover {
+  color: #1dd2af;
+}
+#holidays .holi p {
+  font-family: 'raleway-regular-webfont';
+  color: #8899a8;
+  font-size: 1em;
+  margin-top: 1%;
+  margin-bottom: 30%;
+}
+/*Clients*/
+#clients {
+  margin-top: 50px;
+}
+#clients .titulos {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#clients .titulos p {
+  font-family: 'raleway-regular-webfont';
+  font-size: 1em;
+  color: #2c3e50;
+  margin: 1% auto;
+}
+#clients .titulos h2 {
+  margin-top: 10%;
+  color: #2c3e50;
+}
+#clients .tabs-selection {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+#clients .tabs-selection a {
+  font-family: 'raleway-bold-webfont';
+  font-size: 1.2em;
+  color: #2c3e50;
+  margin: 2% 5%;
+  border-bottom: solid 2px #f5f6f7;
+  transition: all 1s ease;
+}
+#clients .tabs-selection a:hover {
+  color: #8899a8;
+  border-bottom: solid 2px #8899a8;
+}
+#clients .tabs-selection a.activo {
+  color: #1dd2af;
+  border-bottom: solid 2px #1dd2af;
+}
+#clients .seleccionado {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease;
+}
+#clients .seleccionado .texto-seleccionado {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  display: none;
+  margin: 3% auto;
+  transition: all 1s ease;
+}
+#clients .seleccionado .texto-seleccionado p {
+  font-family: 'raleway-light-webfont';
+  font-size: 1em;
+  color: #2c3e50;
+  margin: 2% auto;
+}
+#clients .seleccionado .texto-seleccionado h3 {
+  font-family: 'raleway-black-webfont';
+  font-size: 1.1em;
+  color: #1dd2af;
+}
+#clients .seleccionado .texto-seleccionado.activo {
+  display: block;
+  transition: all 1s ease;
+}
+/*FOOTER*/
+footer {
+  margin-top: 5%;
+}
+footer .fila {
+  background-color: #2c3e50;
+}
+footer .fila .contenedor2 {
+  margin: 3% auto;
+  justify-content: left;
+}
+footer .fila .contenedor2 h3 {
+  font-family: 'raleway-black-webfont';
+  font-size: 1.2;
+  color: #1dd2af;
+}
+footer .fila .contenedor2 p {
+  font-family: 'raleway-regular-webfont';
+  font-size: 0.9em;
+  color: #f5f6f7;
+  margin: 2%;
+}
+footer .fila .contenedor2 p span {
+  color: #1dd2af;
+}
+footer .fila .contenedor2 .newsletter input[type="text"] {
+  background-color: #f5f6f7;
+  font-size: 1em;
+  width: 60%;
+  font-family: 'raleway-light-webfont';
+  margin: 1%;
+}
+footer .fila .contenedor2 .newsletter button {
+  background-color: #1dd2af;
+  font-size: 1em;
+  width: 50px;
+  font-family: 'raleway-light-webfont';
+  color: #f5f6f7;
+  border-radius: 3px;
+  transition: all 1s ease;
+}
+footer .fila .contenedor2 .newsletter button:hover {
+  background-color: #f5f6f7;
+  color: #2c3e50;
+}
+footer .fila .contenedor2 .news {
+  display: flex;
+  width: 100%;
+}
+footer .fila .contenedor2 .news .img-news {
+  display: flex;
+  align-items: center;
+  margin: 2%;
+  width: 20%;
+  border: solid 1px #f5f6f7;
+}
+footer .fila .contenedor2 .news .img-news img {
+  width: 90%;
+  padding: 3%;
+}
+footer .fila .contenedor2 .news .text-news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+footer .fila .contenedor2 .tags button {
+  font-family: 'raleway-light-webfont';
+  font-size: 0.9em;
+  color: #f5f6f7;
+  margin: 1%;
+  padding: 1%;
+  border: solid 1px #f5f6f7;
+}
+footer .fila .contenedor2 i {
+  font-size: 1em;
+  color: #f5f6f7;
+  margin: 2%;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+footer .fila .contenedor2 i:hover {
+  color: #1dd2af;
+}
+footer .fila .addres {
+  margin-top: 2%;
+  text-align: center;
+}
+footer .fila .addres .social-footer {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+footer .fila .nav-footer {
+  text-align: center;
+}
+footer .fila .nav-footer a {
+  font-family: 'raleway-bold-webfont';
+  font-size: 1em;
+  color: #f5f6f7;
+  transition: all 1s ease;
+  margin: 1% 2%;
+}
+footer .fila .nav-footer a:hover {
+  color: #1dd2af;
+}
+footer .fila .nav-footer p {
+  font-family: 'raleway-bold-webfont';
+  font-size: 1em;
+  color: #8899a8;
+  margin: 2% auto;
+}
+/*Responsiv0*/
+/************************************************************/
+/************************  Celular  *************************/
+/***********************************************************/
+@media (max-width: 320px) {
+  .titulos h2 {
+    font-size: 1.2em;
+  }
+  #fotografia-full {
+    height: 410px;
+  }
+  #fotografia-full .button-photo i {
+    font-size: 2em;
+    margin: 2% 2%;
+  }
+  #fotografia-full .fotografia {
+    width: 90%;
+    margin: 2% auto;
+  }
+  #fotografia-full .fotografia img {
+    width: 90%;
+    margin: auto;
+  }
+  header {
+    width: 100%;
+    height: 400px;
+    margin-top: 0;
+  }
+  .btn-loggin h2 {
+    margin: 2% auto;
+    font-size: 1.2em;
+  }
+  .btn-loggin label {
+    font-size: 1em;
+    margin-top: 3%;
+  }
+  .btn-loggin input {
+    width: 80%;
+    height: 20px;
+    font-size: 1em;
+  }
+  .btn-loggin button {
+    font-size: 1em;
+    padding: 2%;
+    margin: 5% auto;
+  }
+  /*Sesiones*/
+  #new-customer-error {
+    height: 400px;
+  }
+  #new-customer-error .titulos-error h2 {
+    margin-top: 5%;
+    font-size: 1.2em;
+  }
+  #new-customer-error .titulos-error i {
+    font-size: 2em;
+    margin: 5% 10%;
+  }
+  #new-customer-error .button-error i {
+    font-size: 2em;
+    margin: 5% 10%;
+  }
+  #sesion {
+    height: 400px;
+  }
+  #sesion h2 {
+    margin-top: 1%;
+    font-size: 1.2em;
+  }
+  #sesion button {
+    font-size: 1em;
+    padding: 2%;
+    height: 50px;
+    margin: 1% auto;
+  }
+  #sesion .button-iniciar-session i {
+    font-size: 1.5em;
+    margin: 1%  10%;
+  }
+  #agent-login {
+    height: 400px;
+    z-index: 105;
+  }
+  #agent-login .button-agent {
+    width: 100%;
+  }
+  #agent-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #agent-login .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  #customer-login {
+    height: 400px;
+    z-index: 105;
+  }
+  #customer-login .button-agent {
+    width: 100%;
+  }
+  #customer-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #customer-login .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  #register {
+    height: 400px;
+    z-index: 105;
+  }
+  #register .button-agent {
+    width: 100%;
+  }
+  #register .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #register .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  /*LOGGIN*/
+  #loggin {
+    display: none;
+  }
+  /*BARRA MENU PHONE*/
+  #nav-phone {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    top: 0;
+    margin-top: 0;
+    background-color: #2c3e50;
+  }
+  #nav-phone i {
+    color: #1dd2af;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 2%;
+  }
+  #nav-phone h2 {
+    font-family: 'raleway-bold-webfont';
+    font-size: 1.2em;
+    margin: auto ;
+    color: #f5f6f7;
+  }
+  #nav-phone .log-cel {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+  #nav-phone .log-cel .btn-phone {
+    width: 15%;
+  }
+  #nav-phone .log-cel .titulo-cel {
+    display: flex;
+    width: 70%;
+  }
+  #nav-phone .btn-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #2c3e50;
+    display: none;
+  }
+  #nav-phone .btn-nav a {
+    color: #f5f6f7;
+    transition: all 1s ease;
+    font-family: 'raleway-black-webfont';
+    font-size: 1em;
+    margin-top: 1%;
+  }
+  #nav-phone .btn-nav a:hover {
+    color: #1dd2af;
+  }
+  #nav-phone .btn-nav i {
+    font-size: 1.2em;
+    margin-top: 2%;
+  }
+  /*BARRA MENU PC*/
+  #nav-pcfull {
+    display: none;
+  }
+  /*BARRA MENU MOVIL*/
+  #nav-movil {
+    display: none;
+  }
+  /*BANNER*/
+  #banner {
+    margin-top: 10%;
+  }
+  #banner .btn-left {
+    display: none;
+  }
+  #banner .btn-right {
+    display: none;
+  }
+  #banner .header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #banner .header h2 {
+    font-size: 2em;
+    margin-top: 10%;
+  }
+  #banner .header p {
+    margin-bottom: 5%;
+    font-size: 0.6em;
+  }
+  #banner .header .botones {
+    display: block;
+  }
+  #banner .header button {
+    padding: 1%;
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 0.7em;
+  }
+  #banner .header .titulo-footer-banner {
+    width: 100%;
+    margin-top: 3%;
+  }
+  #banner .header .titulo-footer-banner h3 {
+    font-size: 0.9em;
+    margin: 2% auto;
+  }
+  #banner .header .bnts-footer-banner {
+    flex-direction: column;
+  }
+  #banner .header .bnts-footer-banner input[type="text"],
+  #banner .header .bnts-footer-banner input[type="date"] {
+    height: 20px;
+  }
+  #banner .header .bnts-footer-banner input[type="button"] {
+    width: 80px;
+    height: 25px;
+    margin-top: 3%;
+  }
+  #banner .header .bnts-footer-banner label {
+    font-size: 0.8em;
+  }
+  /*OFFERS SLIDER*/
+  #offers {
+    margin-top: 10px;
+  }
+  #offers .titulos h2 {
+    margin-top: 5%;
+  }
+  #offers .titulos p {
+    font-size: 0.8em;
+  }
+  .box-slider {
+    width: 100%;
+  }
+  .slider .text-img h4 {
+    font-size: 0.8em;
+  }
+  .slider .text-img p {
+    font-size: 0.6em;
+  }
+  .slider .text-img i {
+    font-size: 1em;
+  }
+  /*HOLYDAYS*/
+  #holidays {
+    margin-top: 10px;
+  }
+  #holidays .titulos h2 {
+    margin-top: 8%;
+  }
+  #holidays .titulos p {
+    font-size: 0.9em;
+    margin: 5% auto;
+  }
+  #holidays .holi {
+    text-align: center;
+  }
+  #holidays .holi .simbol {
+    height: 60px;
+  }
+  #holidays .holi i {
+    font-size: 1em;
+  }
+  #holidays .holi p {
+    font-size: 0.8em;
+    margin-bottom: 10%;
+  }
+  /*Clients*/
+  #clients {
+    margin-top: 10px;
+  }
+  #clients .titulos p {
+    font-size: 0.8em;
+    margin: 2% auto;
+  }
+  #clients .titulos h2 {
+    margin-top: 5%;
+    color: #2c3e50;
+  }
+  #clients .tabs-selection a {
+    font-size: 0.9em;
+    margin: 2% 5%;
+  }
+  #clients .seleccionado .texto-seleccionado {
+    margin: 3% auto;
+  }
+  #clients .seleccionado .texto-seleccionado p {
+    font-size: 0.8em;
+  }
+  #clients .seleccionado .texto-seleccionado h3 {
+    font-size: 1em;
+  }
+  /*FOOTER*/
+  footer {
+    margin-top: 5%;
+  }
+  footer .fila .contenedor2 {
+    margin: 3% auto;
+  }
+  footer .fila .contenedor2 h3 {
+    font-size: 0.9em;
+  }
+  footer .fila .contenedor2 p {
+    font-size: 0.6em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .newsletter {
+    text-align: center;
+    margin-bottom: 10%;
+  }
+  footer .fila .contenedor2 .newsletter input[type="text"] {
+    font-size: 0.8em;
+    width: 60%;
+  }
+  footer .fila .contenedor2 .newsletter button {
+    font-size: 0.8em;
+    width: 40px;
+  }
+  footer .fila .contenedor2 .news {
+    margin-bottom: 10%;
+    text-align: left;
+  }
+  footer .fila .contenedor2 .news .img-news {
+    width: 30%;
+  }
+  footer .fila .contenedor2 .news .text-news {
+    width: 60%;
+  }
+  footer .fila .contenedor2 .tags {
+    display: flex;
+    width: 91.66%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  footer .fila .contenedor2 .tags button {
+    font-size: 0.5em;
+  }
+  footer .fila .contenedor2 i {
+    font-size: 0.8em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .addres {
+    margin-top: 2%;
+    text-align: center;
+  }
+  footer .fila .contenedor2 .addres .social-footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .fila .nav-footer {
+    text-align: center;
+  }
+  footer .fila .nav-footer a {
+    font-family: 'raleway-bold-webfont';
+    font-size: 0.8em;
+    color: #f5f6f7;
+    transition: all 1s ease;
+    margin: 1% 2%;
+  }
+  footer .fila .nav-footer a:hover {
+    color: #1dd2af;
+  }
+  footer .fila .nav-footer p {
+    font-family: 'raleway-bold-webfont';
+    font-size: 0.8em;
+    color: #8899a8;
+    margin: 2% auto;
+  }
+}
+/************************************************************/
+/************************  Tablet  *************************/
+/***********************************************************/
+@media (min-width: 321px) and (max-width: 468px) {
+  .titulos h2 {
+    font-size: 1.3em;
+    margin-left: 2%;
+  }
+  #fotografia-full {
+    height: 450px;
+  }
+  #fotografia-full .button-photo i {
+    font-size: 2em;
+    margin: 2% 2%;
+  }
+  #fotografia-full .fotografia {
+    width: 90%;
+    margin: 2% auto;
+  }
+  #fotografia-full .fotografia img {
+    width: 90%;
+    margin: auto;
+  }
+  header {
+    width: 100%;
+    height: 450px;
+    margin-top: 0;
+  }
+  .btn-loggin h2 {
+    margin: 2% auto;
+    font-size: 1.2em;
+  }
+  .btn-loggin label {
+    font-size: 1em;
+    margin-top: 3%;
+  }
+  .btn-loggin input {
+    width: 80%;
+    height: 20px;
+    font-size: 1em;
+  }
+  .btn-loggin button {
+    font-size: 1em;
+    padding: 2%;
+    margin: 5% auto;
+  }
+  #new-customer-error {
+    height: 500px;
+  }
+  #new-customer-error .titulos-error h2 {
+    margin-top: 5%;
+    font-size: 2em;
+  }
+  #new-customer-error .titulos-error i {
+    font-size: 2em;
+    margin: 5% 10%;
+  }
+  #new-customer-error .button-error i {
+    font-size: 2em;
+    margin: 5% 10%;
+  }
+  #sesion {
+    height: 500px;
+  }
+  #sesion h2 {
+    margin-top: 3%;
+    font-size: 2em;
+  }
+  #sesion button {
+    font-size: 1em;
+    padding: 2%;
+    height: 60px;
+    margin: 3% auto;
+  }
+  #sesion .button-iniciar-session i {
+    font-size: 2em;
+    margin: 3%  10%;
+  }
+  #agent-login {
+    height: 500px;
+    z-index: 105;
+  }
+  #agent-login .button-agent {
+    width: 100%;
+  }
+  #agent-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #agent-login .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  #customer-login {
+    height: 500px;
+    z-index: 105;
+  }
+  #customer-login .button-agent {
+    width: 100%;
+  }
+  #customer-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #customer-login .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  #register {
+    height: 500px;
+    z-index: 105;
+  }
+  #register .button-agent {
+    width: 100%;
+  }
+  #register .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #register .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  /*LOGGIN*/
+  #loggin {
+    display: none;
+  }
+  /*BARRA MENU PHONE*/
+  #nav-phone {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    top: 0;
+    margin-top: 0;
+    background-color: #2c3e50;
+  }
+  #nav-phone i {
+    color: #1dd2af;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 2%;
+  }
+  #nav-phone h2 {
+    font-family: 'raleway-bold-webfont';
+    font-size: 1.2em;
+    margin: auto;
+    color: #f5f6f7;
+  }
+  #nav-phone .log-cel {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+  #nav-phone .log-cel .btn-phone {
+    width: 15%;
+  }
+  #nav-phone .log-cel .titulo-cel {
+    display: flex;
+    width: 70%;
+  }
+  #nav-phone .btn-nav {
+    display: flex;
+    width: 30%;
+    margin-left: 5%;
+    flex-direction: column;
+    background-color: #2c3e50;
+    display: none;
+  }
+  #nav-phone .btn-nav a {
+    color: #f5f6f7;
+    transition: all 1s ease;
+    font-family: 'raleway-black-webfont';
+    font-size: 1em;
+    margin-top: 1%;
+  }
+  #nav-phone .btn-nav a:hover {
+    color: #1dd2af;
+  }
+  #nav-phone .btn-nav i {
+    font-size: 1.2em;
+    margin-top: 2%;
+  }
+  /*BARRA MENU PC*/
+  #nav-pcfull {
+    display: none;
+  }
+  /*BARRA MENU MOVIL*/
+  #nav-movil {
+    display: none;
+  }
+  /*BANNER*/
+  #banner {
+    margin-top: 10%;
+  }
+  #banner .btn-left {
+    display: none;
+  }
+  #banner .btn-right {
+    display: none;
+  }
+  #banner .header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #banner .header h2 {
+    font-size: 2em;
+    margin-top: 15%;
+  }
+  #banner .header p {
+    margin-bottom: 5%;
+    font-size: 0.6em;
+  }
+  #banner .header .botones {
+    display: block;
+  }
+  #banner .header button {
+    padding: 1%;
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 0.7em;
+  }
+  #banner .header .titulo-footer-banner {
+    width: 100%;
+    margin-top: 3%;
+  }
+  #banner .header .titulo-footer-banner h3 {
+    font-size: 1em;
+    margin: 5% auto;
+  }
+  #banner .header .bnts-footer-banner {
+    flex-direction: column;
+  }
+  #banner .header .bnts-footer-banner input[type="text"],
+  #banner .header .bnts-footer-banner input[type="date"] {
+    height: 22px;
+  }
+  #banner .header .bnts-footer-banner input[type="button"] {
+    width: 80px;
+    height: 28px;
+    margin-top: 4%;
+  }
+  #banner .header .bnts-footer-banner label {
+    font-size: 0.9em;
+  }
+  /*OFFERS SLIDER*/
+  #offers {
+    margin-top: 10px;
+  }
+  #offers .titulos h2 {
+    margin-top: 5%;
+  }
+  #offers .titulos p {
+    font-size: 0.8em;
+  }
+  .box-slider {
+    width: 100%;
+  }
+  .slider .text-img h4 {
+    font-size: 0.9em;
+  }
+  .slider .text-img p {
+    font-size: 0.7em;
+  }
+  .slider .text-img i {
+    font-size: 1.1em;
+  }
+  /*HOLYDAYS*/
+  #holidays {
+    margin-top: 10px;
+  }
+  #holidays .titulos h2 {
+    margin-top: 6%;
+  }
+  #holidays .titulos p {
+    font-size: 0.9em;
+    margin: 5% auto;
+  }
+  #holidays .holi {
+    text-align: center;
+  }
+  #holidays .holi .simbol {
+    height: 60px;
+  }
+  #holidays .holi i {
+    font-size: 1.2em;
+  }
+  #holidays .holi p {
+    font-size: 0.8em;
+    margin-bottom: 10%;
+  }
+  /*Clients*/
+  #clients {
+    margin-top: 10px;
+  }
+  #clients .titulos p {
+    font-size: 0.9em;
+    margin: 2% auto;
+  }
+  #clients .titulos h2 {
+    margin-top: 5%;
+    color: #2c3e50;
+  }
+  #clients .tabs-selection a {
+    font-size: 0.9em;
+    margin: 2% 5%;
+  }
+  #clients .seleccionado .texto-seleccionado {
+    margin: 3% auto;
+  }
+  #clients .seleccionado .texto-seleccionado p {
+    font-size: 0.9em;
+  }
+  #clients .seleccionado .texto-seleccionado h3 {
+    font-size: 1.1em;
+  }
+  /*FOOTER*/
+  footer {
+    margin-top: 5%;
+  }
+  footer .fila .contenedor2 {
+    margin: 3% auto;
+  }
+  footer .fila .contenedor2 h3 {
+    font-size: 1em;
+  }
+  footer .fila .contenedor2 p {
+    font-size: 0.7em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .newsletter {
+    text-align: center;
+    margin-bottom: 10%;
+  }
+  footer .fila .contenedor2 .newsletter input[type="text"] {
+    font-size: 0.8em;
+    width: 60%;
+  }
+  footer .fila .contenedor2 .newsletter button {
+    font-size: 1em;
+    width: 40px;
+    height: 30px;
+  }
+  footer .fila .contenedor2 .news {
+    margin-bottom: 10%;
+    text-align: left;
+  }
+  footer .fila .contenedor2 .news .img-news {
+    width: 30%;
+  }
+  footer .fila .contenedor2 .news .text-news {
+    text-align: left;
+    width: 60%;
+  }
+  footer .fila .contenedor2 .tags {
+    display: flex;
+    width: 91.66%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  footer .fila .contenedor2 .tags button {
+    font-size: 0.7em;
+  }
+  footer .fila .contenedor2 i {
+    font-size: 0.9em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .addres {
+    margin-top: 2%;
+    text-align: center;
+  }
+  footer .fila .contenedor2 .addres .social-footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .fila .nav-footer {
+    text-align: center;
+  }
+  footer .fila .nav-footer a {
+    font-family: 'raleway-bold-webfont';
+    font-size: 0.8em;
+    color: #f5f6f7;
+    transition: all 1s ease;
+    margin: 1% 2%;
+  }
+  footer .fila .nav-footer a:hover {
+    color: #1dd2af;
+  }
+  footer .fila .nav-footer p {
+    font-family: 'raleway-bold-webfont';
+    font-size: 0.8em;
+    color: #8899a8;
+    margin: 2% auto;
+  }
+}
+/************************************************************/
+/************************  Tablet 469px  *************************/
+/***********************************************************/
+@media (min-width: 469px) and (max-width: 568px) {
+  .titulos h2 {
+    font-size: 1.3em;
+    margin-left: 2%;
+  }
+  #fotografia-full {
+    height: 510px;
+  }
+  #fotografia-full .button-photo i {
+    font-size: 2em;
+    margin: 2% 2%;
+  }
+  #fotografia-full .fotografia {
+    width: 90%;
+    margin: 2% auto;
+  }
+  #fotografia-full .fotografia img {
+    width: 90%;
+    margin: auto;
+  }
+  header {
+    width: 100%;
+    height: 550px;
+    margin-top: 0;
+  }
+  .btn-loggin h2 {
+    margin: 2% auto;
+    font-size: 1.3em;
+  }
+  .btn-loggin label {
+    font-size: 1.1em;
+    margin-top: 3%;
+  }
+  .btn-loggin input {
+    width: 80%;
+    height: 20px;
+    font-size: 1.1em;
+  }
+  .btn-loggin button {
+    font-size: 1.1em;
+    padding: 2%;
+    margin: 5% auto;
+  }
+  #new-customer-error {
+    height: 600px;
+  }
+  #new-customer-error .titulos-error h2 {
+    margin-top: 5%;
+    font-size: 2em;
+  }
+  #new-customer-error .titulos-error i {
+    font-size: 2em;
+    margin: 5% 10%;
+  }
+  #new-customer-error .button-error i {
+    font-size: 2em;
+    margin: 5% 10%;
+  }
+  #sesion {
+    height: 600px;
+  }
+  #sesion h2 {
+    margin-top: 5%;
+    font-size: 2em;
+  }
+  #sesion button {
+    font-size: 1em;
+    padding: 2%;
+    width: 100px;
+    height: 60px;
+    margin: 5% auto;
+  }
+  #sesion .button-iniciar-session i {
+    font-size: 2em;
+    margin: 3%  10%;
+  }
+  #agent-login {
+    height: 500px;
+    z-index: 105;
+  }
+  #agent-login .button-agent {
+    width: 100%;
+  }
+  #agent-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #agent-login .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  #customer-login {
+    height: 500px;
+    z-index: 105;
+  }
+  #customer-login .button-agent {
+    width: 100%;
+  }
+  #customer-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #customer-login .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  #customer-login {
+    height: 500px;
+    z-index: 105;
+  }
+  #customer-login .button-agent {
+    width: 100%;
+  }
+  #customer-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #customer-login .aloggin {
+    display: flex;
+    width: 90%;
+    margin: 2% auto;
+  }
+  /*LOGGIN*/
+  #loggin {
+    display: none;
+  }
+  /*BARRA MENU PHONE*/
+  #nav-phone {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    margin-top: -55px;
+    background-color: #2c3e50;
+  }
+  #nav-phone i {
+    color: #1dd2af;
+    font-size: 1.9em;
+    cursor: pointer;
+    margin-top: 5%;
+  }
+  #nav-phone h2 {
+    font-family: 'raleway-bold-webfont';
+    font-size: 1.5em;
+    margin: auto;
+    color: #f5f6f7;
+  }
+  #nav-phone .log-cel {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+  #nav-phone .log-cel .btn-phone {
+    width: 15%;
+  }
+  #nav-phone .log-cel .titulo-cel {
+    display: flex;
+    width: 70%;
+  }
+  #nav-phone .btn-nav {
+    display: flex;
+    width: 30%;
+    margin-left: 5%;
+    flex-direction: column;
+    background-color: #2c3e50;
+    display: none;
+  }
+  #nav-phone .btn-nav a {
+    color: #f5f6f7;
+    display: block;
+    transition: all 1s ease;
+    font-family: 'raleway-black-webfont';
+    font-size: 1em;
+    margin-top: 1%;
+  }
+  #nav-phone .btn-nav a:hover {
+    color: #1dd2af;
+  }
+  #nav-phone .btn-nav i {
+    font-size: 1.2em;
+    margin-top: 2%;
+  }
+  /*BARRA MENU PC*/
+  #nav-pcfull {
+    display: none;
+  }
+  /*BARRA MENU MOVIL*/
+  #nav-movil {
+    display: none;
+  }
+  /*BANNER*/
+  #banner {
+    margin-top: 10%;
+  }
+  #banner .btn-left {
+    display: none;
+  }
+  #banner .btn-right {
+    display: none;
+  }
+  #banner .header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #banner .header h2 {
+    font-size: 2.2em;
+    margin-top: 10%;
+  }
+  #banner .header p {
+    margin-bottom: 10%;
+    font-size: 0.7em;
+  }
+  #banner .header .botones {
+    display: block;
+  }
+  #banner .header button {
+    padding: 1%;
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 0.7em;
+  }
+  #banner .header .titulo-footer-banner {
+    width: 100%;
+    margin-top: 3%;
+  }
+  #banner .header .titulo-footer-banner h3 {
+    font-size: 1em;
+    margin: 8% auto;
+  }
+  #banner .header .bnts-footer-banner {
+    flex-direction: column;
+  }
+  #banner .header .bnts-footer-banner input[type="text"],
+  #banner .header .bnts-footer-banner input[type="date"] {
+    height: 25px;
+  }
+  #banner .header .bnts-footer-banner input[type="button"] {
+    width: 80px;
+    height: 32px;
+    margin-top: 5%;
+  }
+  #banner .header .bnts-footer-banner label {
+    font-size: 0.9em;
+  }
+  /*OFFERS SLIDER*/
+  #offers {
+    margin-top: 20px;
+  }
+  #offers .titulos h2 {
+    margin-top: 15%;
+  }
+  #offers .titulos p {
+    font-size: 0.8em;
+  }
+  .box-slider {
+    width: 100%;
+  }
+  .slider .text-img h4 {
+    font-size: 0.9em;
+  }
+  .slider .text-img p {
+    font-size: 0.7em;
+  }
+  .slider .text-img i {
+    font-size: 1.1em;
+  }
+  /*HOLYDAYS*/
+  #holidays {
+    margin-top: 20px;
+  }
+  #holidays .titulos h2 {
+    margin-top: 10%;
+  }
+  #holidays .titulos p {
+    font-size: 0.9em;
+    margin: 5% auto;
+  }
+  #holidays .holi {
+    text-align: center;
+  }
+  #holidays .holi .simbol {
+    height: 60px;
+  }
+  #holidays .holi i {
+    font-size: 1.5em;
+  }
+  #holidays .holi p {
+    font-size: 0.8em;
+    margin-bottom: 10%;
+  }
+  /*Clients*/
+  #clients {
+    margin-top: 20px;
+  }
+  #clients .titulos p {
+    font-size: 1em;
+    margin: 2% auto;
+  }
+  #clients .titulos h2 {
+    margin-top: 10%;
+    color: #2c3e50;
+  }
+  #clients .tabs-selection a {
+    font-size: 1em;
+    margin: 2% 5%;
+  }
+  #clients .seleccionado .texto-seleccionado {
+    margin: 3% auto;
+  }
+  #clients .seleccionado .texto-seleccionado p {
+    font-size: 1em;
+  }
+  #clients .seleccionado .texto-seleccionado h3 {
+    font-size: 1.3em;
+  }
+  /*FOOTER*/
+  footer {
+    margin-top: 5%;
+  }
+  footer .fila .contenedor2 {
+    margin: 3% auto;
+  }
+  footer .fila .contenedor2 h3 {
+    font-size: 1.2em;
+  }
+  footer .fila .contenedor2 p {
+    font-size: 0.9em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .newsletter {
+    text-align: center;
+    margin-bottom: 10%;
+  }
+  footer .fila .contenedor2 .newsletter input[type="text"] {
+    font-size: 1em;
+    width: 60%;
+  }
+  footer .fila .contenedor2 .newsletter button {
+    font-size: 1em;
+    width: 40px;
+    height: 30px;
+  }
+  footer .fila .contenedor2 .news {
+    margin-bottom: 10%;
+    text-align: left;
+  }
+  footer .fila .contenedor2 .news .img-news {
+    width: 30%;
+  }
+  footer .fila .contenedor2 .news .text-news {
+    text-align: left;
+    justify-content: center;
+    width: 60%;
+  }
+  footer .fila .contenedor2 .tags {
+    display: flex;
+    width: 91.66%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  footer .fila .contenedor2 .tags button {
+    font-size: 0.9em;
+  }
+  footer .fila .contenedor2 i {
+    font-size: 1.1em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .addres {
+    margin-top: 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  footer .fila .contenedor2 .addres .social-footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .fila .nav-footer {
+    text-align: center;
+  }
+  footer .fila .nav-footer a {
+    font-family: 'raleway-bold-webfont';
+    font-size: 0.8em;
+    color: #f5f6f7;
+    transition: all 1s ease;
+    margin: 1% 2%;
+  }
+  footer .fila .nav-footer a:hover {
+    color: #1dd2af;
+  }
+  footer .fila .nav-footer p {
+    font-family: 'raleway-bold-webfont';
+    font-size: 0.8em;
+    color: #8899a8;
+    margin: 2% auto;
+  }
+}
+/************************************************************/
+/************************  big tablet    *************************/
+/***********************************************************/
+@media (min-width: 569px) and (max-width: 768px) {
+  .titulos h2 {
+    font-size: 1.5em;
+  }
+  #fotografia-full {
+    height: 700px;
+  }
+  #fotografia-full .button-photo i {
+    font-size: 2.5em;
+    margin: 2% 2%;
+  }
+  #fotografia-full .fotografia {
+    width: 90%;
+    margin: 2% auto;
+  }
+  #fotografia-full .fotografia img {
+    width: 80%;
+    margin: auto;
+  }
+  header {
+    width: 100%;
+    height: 750px;
+    background-attachment: fixed;
+  }
+  .btn-loggin h2 {
+    margin: 2% auto;
+    font-size: 1.3em;
+  }
+  .btn-loggin label {
+    font-size: 1.1em;
+    margin-top: 3%;
+  }
+  .btn-loggin input {
+    width: 80%;
+    height: 20px;
+    font-size: 1.1em;
+  }
+  .btn-loggin button {
+    font-size: 1.1em;
+    padding: 2%;
+    margin: 5% auto;
+  }
+  #new-customer-error {
+    height: 800px;
+  }
+  #new-customer-error .titulos-error h2 {
+    margin-top: 5%;
+    font-size: 2.2em;
+  }
+  #new-customer-error .titulos-error i {
+    font-size: 2.2em;
+    margin: 5% 10%;
+  }
+  #new-customer-error .button-error i {
+    font-size: 2.2em;
+    margin: 5% 10%;
+  }
+  #sesion {
+    height: 800px;
+  }
+  #sesion h2 {
+    margin-top: 3%;
+    font-size: 2em;
+  }
+  #sesion button {
+    font-size: 1em;
+    padding: 2%;
+    width: 100px;
+    height: 80px;
+    margin: 3% auto;
+  }
+  #sesion .button-iniciar-session i {
+    font-size: 2em;
+    margin: 3%  10%;
+  }
+  #agent-login {
+    height: 550px;
+    z-index: 105;
+  }
+  #agent-login .button-agent {
+    width: 100%;
+  }
+  #agent-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #agent-login .aloggin {
+    display: flex;
+    width: 80%;
+    margin: 2% auto;
+  }
+  #customer-login {
+    height: 550px;
+    z-index: 105;
+  }
+  #customer-login .button-agent {
+    width: 100%;
+  }
+  #customer-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #customer-login .aloggin {
+    display: flex;
+    width: 80%;
+    margin: 2% auto;
+  }
+  #customer-login {
+    height: 550px;
+    z-index: 105;
+  }
+  #customer-login .button-agent {
+    width: 100%;
+  }
+  #customer-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2em;
+    margin: 2% 5%;
+  }
+  #customer-login .aloggin {
+    display: flex;
+    width: 80%;
+    margin: 2% auto;
+  }
+  /*LOGGIN*/
+  #loggin {
+    display: none;
+  }
+  #nav-phone {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    top: 0;
+    padding: 0;
+    margin-top: 0;
+    background-color: #2c3e50;
+  }
+  #nav-phone i {
+    color: #1dd2af;
+    font-size: 1.9em;
+    cursor: pointer;
+    margin-top: 5%;
+  }
+  #nav-phone h2 {
+    font-family: 'raleway-bold-webfont';
+    font-size: 1.5em;
+    margin: auto;
+    color: #f5f6f7;
+  }
+  #nav-phone .log-cel {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+  #nav-phone .log-cel .btn-phone {
+    width: 15%;
+  }
+  #nav-phone .log-cel .titulo-cel {
+    display: flex;
+    width: 70%;
+  }
+  #nav-phone .btn-nav {
+    display: flex;
+    width: 30%;
+    margin-left: 5%;
+    flex-direction: column;
+    background-color: #2c3e50;
+    display: none;
+  }
+  #nav-phone .btn-nav a {
+    color: #f5f6f7;
+    display: block;
+    transition: all 1s ease;
+    font-family: 'raleway-black-webfont';
+    font-size: 1em;
+    margin-top: 1%;
+  }
+  #nav-phone .btn-nav a:hover {
+    color: #1dd2af;
+  }
+  #nav-phone .btn-nav i {
+    font-size: 1.2em;
+    margin-top: 2%;
+  }
+  /*BARRA MENU PC*/
+  #nav-pcfull {
+    display: none;
+  }
+  /*BARRA MENU MOVIL*/
+  #nav-movil {
+    display: none;
+  }
+  /*BANNER*/
+  #banner {
+    margin-top: 10%;
+  }
+  #banner .header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #banner .header h2 {
+    font-size: 3em;
+    margin-top: 10%;
+  }
+  #banner .header p {
+    margin-bottom: 10%;
+    font-size: 1em;
+  }
+  #banner .header .botones {
+    display: block;
+  }
+  #banner .header button {
+    padding: 2%;
+    margin-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  #banner .header .titulo-footer-banner {
+    width: 100%;
+    margin-top: 15%;
+  }
+  #banner .header .titulo-footer-banner h3 {
+    font-size: 1.5em;
+    margin: 8% auto;
+  }
+  #banner .header .bnts-footer-banner {
+    flex-direction: column;
+    width: 100%;
+  }
+  #banner .header .bnts-footer-banner input[type="text"],
+  #banner .header .bnts-footer-banner input[type="date"] {
+    display: block;
+    margin: 1% 2%;
+    height: 30px;
+  }
+  #banner .header .bnts-footer-banner input[type="button"] {
+    margin: 1% 2%;
+    width: 100px;
+    height: 30px;
+  }
+  #banner .header .bnts-footer-banner label {
+    margin: 1% 2%;
+    font-size: 1em;
+    color: #1dd2af;
+  }
+  /*OFFERS SLIDER*/
+  #offers {
+    margin-top: 20px;
+  }
+  #offers .titulos {
+    width: 100%;
+  }
+  #offers .titulos h2 {
+    margin-top: 10%;
+    margin-bottom: 1%;
+  }
+  #offers .titulos p {
+    margin-bottom: 3%;
+  }
+  .box-slider {
+    width: 100%;
+    margin: 5% auto;
+  }
+  .slider {
+    display: flex;
+    width: 100%;
+  }
+  .slider .slide {
+    width: 100%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+  }
+  .slider .imagen {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .slider .imagen img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .slider .text-img {
+    width: 100%;
+  }
+  .slider .text-img h4 {
+    font-size: 1.2em;
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+  .slider .text-img p {
+    font-size: 1em;
+    font-family: 'raleway-regular-webfont';
+    color: #8899a8;
+  }
+  .slider .text-img i {
+    font-size: 1.8em;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  /*HOLYDAYS*/
+  #holidays {
+    margin-top: 20px;
+    width: 100%;
+  }
+  #holidays .titulos {
+    width: 100%;
+  }
+  #holidays .titulos h2 {
+    margin-top: 10%;
+  }
+  #holidays .titulos p {
+    font-size: 1em;
+    margin-top: 1%;
+    margin-bottom: 5%;
+  }
+  #holidays .holi .simbol {
+    width: 50%;
+    height: 70px;
+  }
+  #holidays .holi .text {
+    width: 100%;
+    margin-top: 3%;
+  }
+  #holidays .holi i {
+    font-size: 1.8em;
+  }
+  #holidays .holi p {
+    font-size: 1em;
+    margin-top: 1%;
+    margin-bottom: 30%;
+  }
+  /*Clients*/
+  #clients {
+    margin-top: 20px;
+  }
+  #clients .titulos p {
+    font-size: 1em;
+    margin: 1% auto;
+  }
+  #clients .titulos h2 {
+    margin-top: 10%;
+    color: #2c3e50;
+  }
+  #clients .tabs-selection {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  #clients .tabs-selection a {
+    font-size: 1.2em;
+  }
+  #clients .seleccionado .texto-seleccionado p {
+    font-size: 1em;
+  }
+  #clients .seleccionado .texto-seleccionado h3 {
+    font-size: 1.3em;
+  }
+  /*FOOTER*/
+  footer {
+    margin-top: 5%;
+  }
+  footer .fila {
+    background-color: #2c3e50;
+  }
+  footer .fila .contenedor2 {
+    margin: 3% auto;
+    justify-content: center;
+    text-align: center;
+  }
+  footer .fila .contenedor2 h3 {
+    font-size: 1.2;
+    margin: auto;
+  }
+  footer .fila .contenedor2 p {
+    font-size: 0.9em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .newsletter input[type="text"] {
+    font-size: 1em;
+    width: 60%;
+    margin: 1%;
+  }
+  footer .fila .contenedor2 .newsletter .text-newsletter {
+    width: 100%;
+  }
+  footer .fila .contenedor2 .newsletter button {
+    font-size: 1em;
+    width: 50px;
+    border-radius: 3px;
+  }
+  footer .fila .contenedor2 .news {
+    display: flex;
+    width: 100%;
+    text-align: left;
+  }
+  footer .fila .contenedor2 .news .img-news {
+    display: flex;
+    align-items: center;
+    margin: 2%;
+    width: 20%;
+  }
+  footer .fila .contenedor2 .news .img-news img {
+    width: 90%;
+    padding: 3%;
+  }
+  footer .fila .contenedor2 .news .text-news {
+    text-align: left;
+    width: 70%;
+  }
+  footer .fila .contenedor2 .tags {
+    margin-top: 5%;
+  }
+  footer .fila .contenedor2 .tags button {
+    font-family: 'raleway-light-webfont';
+    font-size: 0.9em;
+    color: #f5f6f7;
+    margin: 1%;
+    padding: 1%;
+    border: solid 1px #f5f6f7;
+  }
+  footer .fila .contenedor2 i {
+    font-size: 1em;
+    color: #f5f6f7;
+    margin: 2%;
+    transition: all 1s ease;
+    cursor: pointer;
+  }
+  footer .fila .contenedor2 i:hover {
+    color: #1dd2af;
+  }
+  footer .fila .contenedor2 .addres {
+    margin-top: 5%;
+    text-align: center;
+  }
+  footer .fila .contenedor2 .addres .text-addres {
+    width: 100%;
+  }
+  footer .fila .contenedor2 .addres .social-footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .fila .nav-footer {
+    text-align: center;
+  }
+  footer .fila .nav-footer a {
+    font-size: 1em;
+  }
+  footer .fila .nav-footer p {
+    font-size: 1em;
+    margin: 2% auto;
+  }
+}
+/************************************************************/
+/************************    PC        *************************/
+/***********************************************************/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .titulos h2 {
+    font-size: 1.9em;
+  }
+  #btn-subir {
+    position: fixed;
+    z-index: 9999;
+    margin-right: 1px;
+    bottom: 20px;
+    right: 20px;
+    margin-right: -80px;
+    border-radius: 5px;
+    background-color: rgba(44, 62, 80, 0.7);
+  }
+  #btn-subir i {
+    cursor: pointer;
+    font-size: 2.8em;
+    color: #1dd2af;
+  }
+  #fotografia-full {
+    height: 800px;
+  }
+  #fotografia-full .button-photo i {
+    font-size: 2.5em;
+    margin: 2% 2%;
+  }
+  #fotografia-full .fotografia {
+    width: 90%;
+    margin: 2% auto;
+  }
+  #fotografia-full .fotografia img {
+    width: 80%;
+    margin: auto;
+  }
+  header {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+  }
+  .btn-loggin h2 {
+    margin: 2% auto;
+    font-size: 1.5em;
+  }
+  .btn-loggin label {
+    font-size: 1.2em;
+    margin-top: 3%;
+  }
+  .btn-loggin input {
+    width: 70%;
+    height: 20px;
+    font-size: 1.1em;
+  }
+  .btn-loggin button {
+    font-size: 1.2em;
+    padding: 2%;
+    margin: 5% auto;
+  }
+  #new-customer-error {
+    height: 100vh;
+  }
+  #new-customer-error .titulos-error h2 {
+    margin-top: 5%;
+    font-size: 2.5em;
+  }
+  #new-customer-error .titulos-error i {
+    font-size: 2.5em;
+    margin: 5% 10%;
+  }
+  #new-customer-error .button-error i {
+    font-size: 2.5em;
+    margin: 5% 10%;
+  }
+  #sesion {
+    height: 100vh;
+  }
+  #sesion h2 {
+    margin-top: 4%;
+    font-size: 2.5em;
+  }
+  #sesion button {
+    font-size: 1.1em;
+    padding: 2%;
+    height: 80px;
+    margin: 4% auto;
+  }
+  #sesion .button-iniciar-session i {
+    font-size: 2.5em;
+    margin: 4%  10%;
+  }
+  #agent-login {
+    height: 600px;
+    z-index: 105;
+  }
+  #agent-login .button-agent {
+    width: 100%;
+  }
+  #agent-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2.5em;
+    margin: 2% 5%;
+  }
+  #agent-login .aloggin {
+    display: flex;
+    width: 80%;
+    margin: 2% auto;
+  }
+  #register {
+    height: 600px;
+    z-index: 105;
+  }
+  #register .button-agent {
+    width: 100%;
+  }
+  #register .button-agent i {
+    color: #f5f6f7;
+    font-size: 2.5em;
+    margin: 2% 5%;
+  }
+  #register .aloggin {
+    display: flex;
+    width: 80%;
+    margin: 2% auto;
+  }
+  #customer-login {
+    height: 600px;
+    z-index: 105;
+  }
+  #customer-login .button-agent {
+    width: 100%;
+  }
+  #customer-login .button-agent i {
+    color: #f5f6f7;
+    font-size: 2.5em;
+    margin: 2% 5%;
+  }
+  #customer-login .aloggin {
+    display: flex;
+    width: 80%;
+    margin: 2% auto;
+  }
+  /*LOGGIN*/
+  #loggin .contenedor1 .log {
+    display: flex;
+    width: 30%;
+  }
+  #loggin .contenedor1 .log i {
+    font-size: 0.75em;
+    margin: 3px;
+  }
+  #loggin .contenedor1 .log p {
+    margin: 3px;
+    font-size: 0.75em;
+  }
+  /*BARRA MENU PHONE*/
+  #nav-phone {
+    display: none;
+  }
+  /*BARRA MENU PC*/
+  #nav-pcfull .contenedor1 {
+    flex-direction: row;
+  }
+  #nav-pcfull .contenedor1 h2 {
+    font-size: 1.9em;
+    margin: 2%;
+  }
+  #nav-pcfull .contenedor1 nav a {
+    font-size: 1em;
+    margin: 1%;
+  }
+  #nav-pcfull .contenedor1 nav i {
+    font-size: 1em;
+    margin: 1%;
+  }
+  /*BARRA MENU MOVIL*/
+  #nav-movil .contenedor1 h2 {
+    font-size: 2em;
+    margin: 2%;
+  }
+  #nav-movil .contenedor1 nav a {
+    font-size: 1em;
+    margin: 1%;
+  }
+  #nav-movil .contenedor1 nav i {
+    font-size: 1em;
+    margin: 1%;
+  }
+  /*BANNER*/
+  #banner {
+    margin-top: 10%;
+  }
+  #banner .header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #banner .header h2 {
+    font-size: 3.5em;
+    margin-top: 10%;
+  }
+  #banner .header p {
+    margin-bottom: 10%;
+    font-size: 1em;
+  }
+  #banner .header .botones {
+    display: block;
+  }
+  #banner .header button {
+    padding: 2%;
+    margin-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  #banner .header .titulo-footer-banner {
+    width: 100%;
+    margin-top: 15%;
+  }
+  #banner .header .titulo-footer-banner h3 {
+    font-size: 1.5em;
+    margin: 5% auto;
+  }
+  #banner .header .bnts-footer-banner {
+    width: 100%;
+  }
+  #banner .header .bnts-footer-banner input[type="text"],
+  #banner .header .bnts-footer-banner input[type="date"] {
+    display: block;
+    margin: 1% 3%;
+    height: 30px;
+  }
+  #banner .header .bnts-footer-banner input[type="button"] {
+    width: 100px;
+    height: 30px;
+  }
+  #banner .header .bnts-footer-banner label {
+    color: #1dd2af;
+  }
+  /*OFFERS SLIDER*/
+  #offers {
+    margin-top: 50px;
+  }
+  #offers .titulos {
+    width: 100%;
+  }
+  #offers .titulos h2 {
+    margin-top: 5%;
+    margin-bottom: 1%;
+  }
+  #offers .titulos p {
+    margin-bottom: 3%;
+  }
+  .box-slider {
+    width: 100%;
+    margin: 5% auto;
+  }
+  .slider {
+    display: flex;
+    width: 100%;
+  }
+  .slider .slide {
+    width: 100%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+  }
+  .slider .imagen {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .slider .imagen img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .slider .text-img {
+    width: 100%;
+  }
+  .slider .text-img h4 {
+    font-size: 1.2em;
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+  .slider .text-img p {
+    font-size: 1em;
+    font-family: 'raleway-regular-webfont';
+    color: #8899a8;
+  }
+  .slider .text-img i {
+    font-size: 1.8em;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  /*HOLYDAYS*/
+  #holidays {
+    margin-top: 50px;
+    width: 100%;
+  }
+  #holidays .titulos {
+    width: 100%;
+  }
+  #holidays .titulos h2 {
+    margin-top: 5%;
+  }
+  #holidays .titulos p {
+    font-size: 1em;
+    margin-top: 1%;
+    margin-bottom: 5%;
+  }
+  #holidays .holi .simbol {
+    width: 50%;
+    height: 80px;
+  }
+  #holidays .holi .text {
+    width: 100%;
+    margin-top: 3%;
+  }
+  #holidays .holi i {
+    font-size: 2.5em;
+  }
+  #holidays .holi p {
+    font-size: 1em;
+    margin-top: 1%;
+    margin-bottom: 30%;
+  }
+  /*Clients*/
+  #clients {
+    margin-top: 100px;
+  }
+  #clients .titulos p {
+    font-size: 1em;
+    margin: 1% auto;
+  }
+  #clients .titulos h2 {
+    color: #2c3e50;
+  }
+  #clients .tabs-selection {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  #clients .tabs-selection a {
+    font-size: 1.2em;
+  }
+  #clients .seleccionado .texto-seleccionado p {
+    font-size: 1em;
+  }
+  #clients .seleccionado .texto-seleccionado h3 {
+    font-size: 1.1em;
+  }
+  /*FOOTER*/
+  footer {
+    margin-top: 5%;
+  }
+  footer .fila {
+    background-color: #2c3e50;
+  }
+  footer .fila .contenedor2 {
+    margin: 3% auto;
+    justify-content: center;
+  }
+  footer .fila .contenedor2 h3 {
+    font-size: 1.2;
+  }
+  footer .fila .contenedor2 p {
+    font-size: 0.9em;
+    margin: 2%;
+  }
+  footer .fila .contenedor2 .newsletter input[type="text"] {
+    font-size: 1em;
+    width: 60%;
+    margin: 1%;
+  }
+  footer .fila .contenedor2 .newsletter button {
+    font-size: 1em;
+    width: 50px;
+    border-radius: 3px;
+  }
+  footer .fila .contenedor2 .news {
+    display: flex;
+    width: 100%;
+    text-align: left;
+  }
+  footer .fila .contenedor2 .news .img-news {
+    display: flex;
+    align-items: center;
+    margin: 2%;
+    width: 20%;
+  }
+  footer .fila .contenedor2 .news .img-news img {
+    width: 90%;
+    padding: 3%;
+  }
+  footer .fila .contenedor2 .news .text-news {
+    text-align: left;
+    width: 70%;
+  }
+  footer .fila .contenedor2 .tags {
+    margin-top: 5%;
+  }
+  footer .fila .contenedor2 .tags button {
+    font-family: 'raleway-light-webfont';
+    font-size: 0.9em;
+    color: #f5f6f7;
+    margin: 1%;
+    padding: 1%;
+    border: solid 1px #f5f6f7;
+  }
+  footer .fila .contenedor2 i {
+    font-size: 1em;
+    color: #f5f6f7;
+    margin: 2%;
+    transition: all 1s ease;
+    cursor: pointer;
+  }
+  footer .fila .contenedor2 i:hover {
+    color: #1dd2af;
+  }
+  footer .fila .contenedor2 .addres {
+    margin-top: 5%;
+    text-align: center;
+  }
+  footer .fila .contenedor2 .addres .social-footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .fila .nav-footer {
+    text-align: center;
+  }
+  footer .fila .nav-footer a {
+    font-size: 1em;
+  }
+  footer .fila .nav-footer p {
+    font-size: 1em;
+    margin: 2% auto;
+  }
+}

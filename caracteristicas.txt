@@ -1,0 +1,26 @@
+
+letras
+raleway
+sense regular
+
+
+azul fuerte
+#2c3e50
+rgb(44,62,80)
+
+azul claro
+#1dd2af
+rgb(26,210,175)
+
+azul claro 2
+#1dd2af
+rgb(29,210,175)
+
+
+azul medio
+#8899a8rgb
+(136,153,168)
+
+letra iconos blanco
+#f5f6f7
+rgb(245,246,247)
